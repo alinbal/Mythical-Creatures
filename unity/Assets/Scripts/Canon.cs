@@ -22,11 +22,12 @@ public class Canon : MonoBehaviour
 	void Start()
 	{
 		_pivotPoint = Camera.main.WorldToScreenPoint(_pivotObject.transform.position);
-		_powerSliderController = UIController.instance.powerSliderController;
+		
 	}
 
 	public void SetActive(bool active)
 	{
+		_powerSliderController = UIController.instance.powerSliderController;
 		_isActive = active;
 		_powerSliderController.Reset();
 		if (active)
