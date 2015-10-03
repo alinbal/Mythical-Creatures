@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 using UnityEngine.UI;
 
 public class Canon : MonoBehaviour
@@ -11,11 +12,17 @@ public class Canon : MonoBehaviour
 	[SerializeField] private GameObject _pivotObject;
 #pragma warning restore 649
 	private Vector3 _pivotPoint;
+	[SerializeField] private GameObject _bulletPrefab;
+	[SerializeField] private GameObject _canonNozle;
+	private float _sliderValue = 0;
+	[SerializeField] private float _maxPower;
+	[SerializeField] private PowerSliderController _powerSliderController;
 
 	// Use this for initialization
 	void Start()
 	{
 		_pivotPoint =  Camera.main.WorldToScreenPoint(_pivotObject.transform.position);
+		
 	}
 
 	// Update is called once per frame
@@ -25,6 +32,16 @@ public class Canon : MonoBehaviour
 		_angleText.text = "Angle:" + angle; 
 		var newRotation = Quaternion.Euler(new Vector3(0, 0, angle));
 		_pivotObject.transform.localRotation = newRotation;
+
+		if (Input.GetKeyUp(KeyCode.Mouse0))
+		{
+			FireBullet(_maxPower * _powerSliderController.GetValue());
+		}
+
+		if (Input.GetKeyUp(KeyCode.Space))
+		{
+			_powerSliderController.Reset();
+		}
 	}
 
 	//Converts the mouse position to angle
@@ -44,5 +61,15 @@ public class Canon : MonoBehaviour
 			//angleDegrees+=360;
 
 		return Mathf.Clamp(angleDegrees,0,90);
+	}
+
+	void FireBullet(float power)
+	{
+		GameObject projectile = Instantiate(_bulletPrefab);
+		projectile.transform.position = _canonNozle.transform.position;
+		projectile.transform.rotation = _pivotObject.transform.rotation;
+		projectile.transform.localScale = new Vector3(2,2,2);
+		Rigidbody2D component = projectile.GetComponent<Rigidbody2D>();
+		component.AddForce(_pivotObject.transform.right* power,ForceMode2D.Impulse);	
 	}
 }
