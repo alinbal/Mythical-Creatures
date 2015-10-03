@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
 			var explosion = Instantiate(_explosionPrefab, transform.position, transform.rotation);
 			Destroy(gameObject);
 			Destroy(explosion,1);
+			GameController.instance.ChangePlayer();
 		}
 	}
 }
