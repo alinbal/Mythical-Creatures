@@ -1,13 +1,15 @@
 fileFormatVersion: 2
-guid: 2e3a9491fdee4094ea3fc828f5aa679c
-timeCreated: 1443896171
+guid: de5a1f2ebad9d0c4b9bb8f51807ffe17
+timeCreated: 1443899099
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: nessy_0
-    21300002: nessy_1
-    21300004: nessy_2
-    21300006: nessy_3
+    21300000: chupacabra01_0
+    21300002: chupacabra01_1
+    21300004: chupacabra01_2
+    21300006: chupacabra01_3
+    21300008: chupacabra01_4
+    21300010: chupacabra01_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -31,7 +33,7 @@ TextureImporter:
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
-  maxTextureSize: 2048
+  maxTextureSize: 1024
   textureSettings:
     filterMode: -1
     aniso: 16
@@ -54,45 +56,65 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: nessy_0
+    - name: chupacabra01_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1105
-        height: 504
+        x: 51
+        y: 582
+        width: 403
+        height: 343
       alignment: 9
-      pivot: {x: .657546699, y: .558907926}
+      pivot: {x: .351406932, y: -.0204010457}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: nessy_1
+    - name: chupacabra01_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 596
-        width: 673
-        height: 488
+        x: 454
+        y: 597
+        width: 273
+        height: 313
       alignment: 9
-      pivot: {x: .925111234, y: .660394788}
+      pivot: {x: .875429511, y: .41169852}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: nessy_2
+    - name: chupacabra01_2
       rect:
         serializedVersion: 2
-        x: 716
-        y: 877
-        width: 307
-        height: 234
+        x: 787
+        y: 597
+        width: 205
+        height: 356
       alignment: 9
-      pivot: {x: .640667319, y: .897937715}
+      pivot: {x: .0899193734, y: .435303599}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: nessy_3
+    - name: chupacabra01_3
       rect:
         serializedVersion: 2
-        x: 694
-        y: 594
-        width: 324
-        height: 244
+        x: 56
+        y: 87
+        width: 355
+        height: 405
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: chupacabra01_4
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 175
+        width: 333
+        height: 316
       alignment: 9
-      pivot: {x: .612460494, y: .970122278}
+      pivot: {x: .918448389, y: .299563646}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: chupacabra01_5
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 176
+        width: 333
+        height: 316
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
