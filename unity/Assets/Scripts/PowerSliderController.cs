@@ -11,15 +11,25 @@ public class PowerSliderController : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		_tween  = DOTween.To(() => _powerSlider.value, value => _powerSlider.value = value, 1, 0.3f);
-		_tween.SetEase(Ease.Linear);
-		_tween.SetLoops(-1, LoopType.Yoyo);
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		
+		if (Input.GetKeyDown(KeyCode.Mouse0))
+		{
+			
+		}
+
+		var pos = Input.mousePosition;
+		pos.y += 0.2f;
+		transform.position = pos;
+	}
+
+	public void StartAnimation()
+	{
+		_tween  = DOTween.To(() => _powerSlider.value, value => _powerSlider.value = value, 1,1);
+		_tween.SetEase(Ease.Linear);
 	}
 
 	public float GetValue()
@@ -30,6 +40,7 @@ public class PowerSliderController : MonoBehaviour
 
 	public void Reset()
 	{
-		_tween.Restart();
+		_powerSlider.value = 0;
+		_tween.Rewind();
 	}
 }
