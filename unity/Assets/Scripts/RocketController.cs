@@ -29,10 +29,6 @@ public class RocketController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (!GameController.instance.isGameLost)
-		{
-			
-		}
 		if (Input.GetKey(KeyCode.UpArrow))
 		{
 			//apply force up
@@ -42,13 +38,13 @@ public class RocketController : MonoBehaviour
 		if (Input.GetKey(KeyCode.LeftArrow))
 		{
 			//apply force left
-			_rocketRigidBody.AddForce(Vector2.left, ForceMode2D.Force);
+			_rocketRigidBody.AddForce(Vector2.left * 0.4f, ForceMode2D.Impulse);
 		}
 
 		if (Input.GetKey(KeyCode.RightArrow))
 		{
 			//apply force right
-			_rocketRigidBody.AddForce(Vector2.right, ForceMode2D.Force);
+			_rocketRigidBody.AddForce(Vector2.right * 0.4f, ForceMode2D.Impulse);
 		}
 
 		if (Input.GetKeyUp(KeyCode.Space))

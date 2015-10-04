@@ -21,7 +21,7 @@ public class CrateController : MonoBehaviour
 	{
 		if (coll.gameObject.tag == "Brick")
 		{
-			if (GameController.instance.height > 1 && !GameController.instance.isGameLost)
+			if (GameController.instance.height > 1 && !GameController.instance.isGameLost && !anchoredToRocket)
 			{
 				GameController.instance.isGameLost = true;
 				GameController.instance.GameOver();

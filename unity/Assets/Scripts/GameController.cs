@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
 	}
 
 	[SerializeField] private Text _heightText;
+	[SerializeField] private Text _heightTextShadow;
 	[SerializeField] private Text _gameOverText;
 	[SerializeField] private GameObject _restartButton;
 	public int height;
@@ -34,13 +35,15 @@ public class GameController : MonoBehaviour
 		_gameOverText.gameObject.SetActive(false);
 		_restartButton.SetActive(false);
 		Time.timeScale = 1;
-		_heightText.text = "Height:";
+		_heightText.text = "x0";
+		_heightTextShadow.text = "x0";
 		height = 0;
 	}
 
 	public void UpdateUi()
 	{
-		_heightText.text = "Height: " + height;
+		_heightText.text = "x" + height;
+		_heightTextShadow.text = "x" + height;
 	}
 
 	public void GameOver()
