@@ -62,8 +62,9 @@ public class RocketController : MonoBehaviour
 					Destroy(distanceJoint);
 				}
 
+				var prefabRandom = _prefabList[Random.Range(0, 4)];
 				var randomSpawmPoint = _spawnPoints[Random.Range(0, 4)];
-				_currentCrate = Instantiate(_cratePrefab , randomSpawmPoint.transform.position,randomSpawmPoint.transform.rotation) as GameObject;
+				_currentCrate = Instantiate(prefabRandom , randomSpawmPoint.transform.position,randomSpawmPoint.transform.rotation) as GameObject;
 				if (_currentCrate != null)
 				{
 					var distJoint = _currentCrate.GetComponent<DistanceJoint2D>();
