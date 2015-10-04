@@ -27,9 +27,14 @@ public class Canon : MonoBehaviour
 
 	public void SetActive(bool active)
 	{
+		
 		_powerSliderController = UIController.instance.powerSliderController;
+		if (active)
+		{
+			_powerSliderController.StartAnimation();	
+		}
 		_isActive = active;
-		_powerSliderController.Reset();
+		//_powerSliderController.Reset();
 		if (active)
 		{
 			var color = _spriteArrow.color;
@@ -56,10 +61,7 @@ public class Canon : MonoBehaviour
 
 			if (Input.GetKeyDown(KeyCode.Mouse0))
 			{
-				if (_powerSliderController != null)
-				{
-					_powerSliderController.StartAnimation();
-				}
+				
 
 			}
 
@@ -68,6 +70,7 @@ public class Canon : MonoBehaviour
 				if (_powerSliderController != null)
 				{
 					FireBullet(_maxPower * _powerSliderController.GetValue());
+					
 				}
 				else
 				{

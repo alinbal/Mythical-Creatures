@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class PowerSliderController : MonoBehaviour
 {
-	[SerializeField] private Slider _powerSlider;
+	[SerializeField]
+	private Slider _powerSlider;
 	private Tween _tween;
 
 	// Use this for initialization
 	void Start()
 	{
+		StartAnimation();
 	}
 
 	// Update is called once per frame
@@ -18,7 +20,7 @@ public class PowerSliderController : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Mouse0))
 		{
-			
+
 		}
 
 		var pos = Input.mousePosition;
@@ -28,8 +30,14 @@ public class PowerSliderController : MonoBehaviour
 
 	public void StartAnimation()
 	{
-		_tween  = DOTween.To(() => _powerSlider.value, value => _powerSlider.value = value, 1,1);
-		_tween.SetEase(Ease.Linear);
+		if (_tween == null)
+		{
+			_tween = DOTween.To(() => _powerSlider.value, value => _powerSlider.value = value, 1, 0.4f);
+			_tween.SetEase(Ease.Linear);
+			_tween.SetLoops(-1, LoopType.Yoyo);
+		}
+
+		_tween.Restart();
 	}
 
 	public float GetValue()
