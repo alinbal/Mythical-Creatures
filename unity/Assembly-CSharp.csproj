@@ -49,9 +49,14 @@
      <Compile Include="Assets\Scripts\BrickController.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\Canon.cs" />
+     <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\Gun.cs" />
+     <Compile Include="Assets\Scripts\LaneGameController.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PowerSliderController.cs" />
+     <Compile Include="Assets\Scripts\RocketController.cs" />
      <Compile Include="Assets\Scripts\StartUp.cs" />
      <Compile Include="Assets\Scripts\UIController.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
@@ -61,17 +66,11 @@
      <None Include="Assets\Scripts\DOTween\DOTween43.xml" />
      <None Include="Assets\Scripts\DOTween\readme.txt" />
      <None Include="Assets\Scripts\DOTween\DOTween46.xml" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
  <HintPath>D:/Creatures and Towers/unity/Assets/Scripts/DOTween/DOTween.dll</HintPath>
