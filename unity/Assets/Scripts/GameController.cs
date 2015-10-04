@@ -21,8 +21,8 @@ public class GameController : MonoBehaviour
 
 	[SerializeField] private Text _heightText;
 	[SerializeField] private Text _heightTextShadow;
-	[SerializeField] private Text _gameOverText;
 	[SerializeField] private GameObject _restartButton;
+	[SerializeField] private GameObject _gameOverSprite;
 	public int height;
 	public bool isGameLost = false;
 
@@ -32,7 +32,8 @@ public class GameController : MonoBehaviour
 	void Start()
 	{
 		isGameLost = false;
-		_gameOverText.gameObject.SetActive(false);
+		//_gameOverText.gameObject.SetActive(false)
+		_gameOverSprite.SetActive(false);
 		_restartButton.SetActive(false);
 		Time.timeScale = 1;
 		_heightText.text = "x0";
@@ -49,10 +50,10 @@ public class GameController : MonoBehaviour
 	public void GameOver()
 	{
 		var del = onGameLost;
-		_gameOverText.gameObject.SetActive(true);
+		_gameOverSprite.SetActive(true);
 		_restartButton.SetActive(true);
 		//Time.timeScale = 0;
-		Invoke("PauseGame",0.5f);
+		Invoke("PauseGame",2f);
 		if (del!=null)
 		{
 			del();

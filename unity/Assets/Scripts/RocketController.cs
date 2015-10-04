@@ -6,6 +6,7 @@ public class RocketController : MonoBehaviour
 {
 	[SerializeField] private Rigidbody2D _rocketRigidBody;
 	[SerializeField] private GameObject _cratePrefab;
+	[SerializeField] private List<GameObject> _prefabList = new List<GameObject>();
 	[SerializeField] private List<GameObject> _spawnPoints = new List<GameObject>(); 
 	private GameObject _currentCrate;
 	[SerializeField] private GameObject _explostionPrefab;
@@ -55,6 +56,7 @@ public class RocketController : MonoBehaviour
 				var distanceJoint = _currentCrate.GetComponent<DistanceJoint2D>();
 				var crateController = _currentCrate.GetComponent<CrateController>();
 				crateController.anchoredToRocket = false;
+				crateController.UnselectBox();
 				if (distanceJoint!=null)
 				{
 					Destroy(distanceJoint);
