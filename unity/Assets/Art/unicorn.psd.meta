@@ -1,9 +1,17 @@
 fileFormatVersion: 2
 guid: 467270fd5e8cbb44594ef673ae987a56
-timeCreated: 1443894334
+timeCreated: 1443944023
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: unicorn_0
+    21300002: unicorn_1
+    21300004: unicorn_2
+    21300006: unicorn_3
+    21300008: unicorn_4
+    21300010: unicorn_5
+    21300012: unicorn_6
+    21300014: unicorn_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,7 +46,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +57,87 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: unicorn_0
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 380
+        width: 297
+        height: 444
+      alignment: 9
+      pivot: {x: .937725663, y: .254562169}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: unicorn_1
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 645
+        width: 113
+        height: 151
+      alignment: 9
+      pivot: {x: .525378227, y: .0505294278}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: unicorn_2
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 574
+        width: 211
+        height: 187
+      alignment: 9
+      pivot: {x: .133037254, y: .131946906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: unicorn_3
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 232
+        width: 352
+        height: 301
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: unicorn_4
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 25
+        width: 129
+        height: 178
+      alignment: 9
+      pivot: {x: .285104215, y: .934995055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: unicorn_5
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 114
+        width: 89
+        height: 167
+      alignment: 9
+      pivot: {x: .328150362, y: .8892349}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: unicorn_6
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 166
+        width: 95
+        height: 134
+      alignment: 9
+      pivot: {x: .741494596, y: .920887709}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: unicorn_7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 31
+        width: 224
+        height: 141
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 
