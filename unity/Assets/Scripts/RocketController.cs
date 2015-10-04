@@ -20,19 +20,19 @@ public class RocketController : MonoBehaviour
 		if (Input.GetKey(KeyCode.UpArrow))
 		{
 			//apply force up
-			_rocketRigidBody.AddForce(Vector2.up * 0.9f, ForceMode2D.Impulse);
+			_rocketRigidBody.AddForce(Vector2.up , ForceMode2D.Impulse);
 		}
 
 		if (Input.GetKey(KeyCode.LeftArrow))
 		{
 			//apply force left
-			_rocketRigidBody.AddForce(Vector2.left * 0.8f, ForceMode2D.Force);
+			_rocketRigidBody.AddForce(Vector2.left, ForceMode2D.Force);
 		}
 
 		if (Input.GetKey(KeyCode.RightArrow))
 		{
 			//apply force right
-			_rocketRigidBody.AddForce(Vector2.right * 0.8f, ForceMode2D.Force);
+			_rocketRigidBody.AddForce(Vector2.right, ForceMode2D.Force);
 		}
 
 		if (Input.GetKeyUp(KeyCode.Space))
