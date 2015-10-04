@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -12,44 +14,56 @@ public class GameController : MonoBehaviour
 			if (_instance == null)
 			{
 				_instance = FindObjectOfType(typeof(GameController)) as GameController;
-				if (_instance != null) DontDestroyOnLoad(_instance.gameObject);
 			}
 			return _instance;
 		}
 	}
 
-	public Canon player1;
-	public Canon player2;
+	[SerializeField] private Text _heightText;
+	[SerializeField] private Text _gameOverText;
+	[SerializeField] private GameObject _restartButton;
+	public int height;
+	public bool isGameLost = false;
 
-	private Canon _currenPlayer = null;
+	public static Action onGameLost;
+	public static Action onGameStart;
 
-	// Use this for initialization
 	void Start()
 	{
-		_currenPlayer = player1;
-		_currenPlayer.SetActive(true);
-		player2.SetActive(false);
+		isGameLost = false;
+		_gameOverText.gameObject.SetActive(false);
+		_restartButton.SetActive(false);
+		Time.timeScale = 1;
+		_heightText.text = "Height:";
+		height = 0;
 	}
 
-	public void ChangePlayer()
+	public void UpdateUi()
 	{
-		if (_currenPlayer == player1)
+		_heightText.text = "Height: " + height;
+	}
+
+	public void GameOver()
+	{
+		var del = onGameLost;
+		_gameOverText.gameObject.SetActive(true);
+		_restartButton.SetActive(true);
+		//Time.timeScale = 0;
+		Invoke("PauseGame",0.5f);
+		if (del!=null)
 		{
-			player1.SetActive(false);
-			player2.SetActive(true);
-			_currenPlayer = player2;
-		}
-		else
-		{
-			player2.SetActive(false);
-			player1.SetActive(true);
-			_currenPlayer = player1;
+			del();
 		}
 	}
 
-	// Update is called once per frame
-	void Update()
+	void PauseGame()
 	{
+		Time.timeScale = 0;
+	}
 
+	public void RestartGame()
+	{
+		Application.LoadLevel("laneGame");
+		Time.timeScale = 1;
 	}
 }
