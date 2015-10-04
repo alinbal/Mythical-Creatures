@@ -4,11 +4,19 @@ using System.Collections;
 public class CrateController : MonoBehaviour
 {
 	public bool anchoredToRocket = true;
+	[SerializeField]public Sprite selectedSprite;
+	[SerializeField]public Sprite unselectedSprite;
+	[SerializeField] public SpriteRenderer _spriteRenderer;
 
 	// Use this for initialization
 	void Start()
 	{
+		_spriteRenderer.sprite = selectedSprite;
+	}
 
+	public void UnselectBox()
+	{
+		_spriteRenderer.sprite = unselectedSprite;
 	}
 
 	// Update is called once per frame

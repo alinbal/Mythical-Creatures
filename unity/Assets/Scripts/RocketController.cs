@@ -55,6 +55,7 @@ public class RocketController : MonoBehaviour
 				var distanceJoint = _currentCrate.GetComponent<DistanceJoint2D>();
 				var crateController = _currentCrate.GetComponent<CrateController>();
 				crateController.anchoredToRocket = false;
+				crateController.UnselectBox();
 				if (distanceJoint!=null)
 				{
 					Destroy(distanceJoint);
